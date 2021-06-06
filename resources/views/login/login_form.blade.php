@@ -24,12 +24,8 @@
             </ul>
           </div>
         @endif
-        @if (session('error_success'))
-        <div class="alert alert-denger">
-          {{session('error_success')}}
-        </div>
-      @endif
-
+      <x-alert type="danger" :session="session('login_error')"/>
+      <x-alert type="danger" :session="session('logout')"/>
         <label for="inputEmail" class="sr-only">Email address</label>
         <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email address" required
             autofocus>
